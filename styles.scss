@@ -1,0 +1,127 @@
+@import "./scss.scss";
+
+p{
+    @include respon(sm) {
+        background-color: red;
+        color: white;
+    }
+}
+
+p {
+    color: green;
+}
+
+form{
+    @include respon(sm) {
+        background-color: aquamarine;
+    }
+
+    @include respon(md) {
+        background-color: rgb(95, 214, 105);
+        color: white;
+    }
+
+    @include respon(lg) {
+        background-color: rgb(154, 184, 218);
+        color: white;
+    }
+
+    @include respon(xl) {
+        background-color: rgb(225, 231, 138);
+        color: white;
+    }
+
+    @include respon(big-table) {
+        background-color: rgb(177, 218, 154);
+        color: white;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.carousel {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    background-color: grey;
+
+    #carousel{
+        overflow: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: both;
+    }
+    
+    .carousel-indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline;
+        background-color: grey;
+        list-style: none;
+        border-radius: 5px;
+
+        li{
+            float: left;
+            width: 20px;
+            height: 5px;
+            padding: 0px 10px;
+            margin: 10px;
+            border: 2px solid rgb(165, 148, 118);
+            
+            &.active {
+                border: 2px solid rgb(226, 221, 211);
+            }
+        }
+    }
+
+    .carousel-inner {
+        display: flex;
+        width:max-content;
+
+        .carousel-item{
+            transition: 2s;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // animation: opacity 2s ease-in-out;
+            img{
+                width: 80vw;
+                height: 80vh;
+            }
+        }
+    }
+
+    #prev, #next {
+        position: absolute;
+        background: grey;
+        border: none;
+        height: 60px;
+        width: 60px;
+        color: azure;
+        font-size: 50px;
+        border-radius: 5px;
+    }
+
+    #prev {
+        top: 50%;
+        left: 20px;
+    }
+    #next {
+        top: 50%;
+        right: 20px;
+    }
+
+    @keyframes opacity {
+        from{
+            opacity: 0;
+        };
+        to{
+            opacity: 1;
+        }
+    }
+}
+
+
